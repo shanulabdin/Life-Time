@@ -200,3 +200,15 @@ const data = {
   "Zambia": { "total": 66.70, "male": 69.07, "female": 64.25 },
   "Zimbabwe": { "total": 63.35, "male": 65.61, "female": 60.75 }
 };
+
+let country = "Western Sahara";
+console.log(country, data[country]);
+
+let countries = Object.keys(data);
+
+for(let i = 0; i < 10; i++){
+  console.log(`${i}`, countries[i]);
+}
+
+// Data from:
+// https://www.worldometers.info/demographics/life-expectancy
