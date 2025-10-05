@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Life Time</title>
+</head>
+<body>
+  <input id="age" type="number" placeholder="age">
+  <input id="estAge" type="number" placeholder="estAge">
+
+  <div id="display"></div>
+
+  <button onclick="percentage()">
+    percentage
+  </button>
+
+  <script>
+    const [age, estAge] = document.querySelectorAll('input');
+    const display = document.querySelector('#display');
+
+    function percentage(){
+      const calculate = ((age.valueAsNumber / estAge.valueAsNumber) * 100).toFixed(2);
+      display.innerHTML = `<p>${calculate}% Percent.</p>`;
+      age.value = estAge.value = '';
+    }
+  </script>
+</body>
+</html>
