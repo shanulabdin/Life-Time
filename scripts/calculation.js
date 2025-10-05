@@ -7,12 +7,16 @@ function percentage(){
   const ageVal = age.valueAsNumber;
   const estAgeVal = estAge.valueAsNumber;
   if (ageVal > estAgeVal){
-    console.log('age cannot be less than estAge');
     display.innerHTML = `<p style='color: red;'>Age cannot be less than Life Span.</p>`;
-    return
+    return;
   }
 
-  const calculate = ((age.valueAsNumber / estAge.valueAsNumber) * 100).toFixed(1);
+  if(ageVal <= 0){
+    display.innerHTML = `<p style='color: red;'>Age must be more than 0.</p>`;
+    return;
+  }
+
+  const calculate = ((ageVal / estAgeVal) * 100).toFixed(1);
   display.innerHTML = `<p>You've lived ${calculate}% Percent of your life.</p>`;
   age.value = estAge.value = '';
 }
