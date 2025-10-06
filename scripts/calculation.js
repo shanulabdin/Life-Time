@@ -21,3 +21,30 @@ function percentage(){
   age.value = estAge.value = '';
 }
 calcBtn.addEventListener('click', percentage);
+
+
+// Searching from Data
+import { data } from "./data.js";
+const countryInput = document.querySelector('#countryInput');
+const countryBtn = document.querySelector('#countryBtn');
+
+
+function submit(){
+  let country;
+  let countryInputVal = countryInput.value;
+
+  country = countryInputVal
+  
+  console.log(country, data[country]);
+}
+
+countryBtn.addEventListener('click', () => {
+    submit();
+    countryInput.value = '';
+});
+countryInput.addEventListener('keydown', (e) => {
+  if(e.key === 'Enter'){
+    submit();
+    countryInput.value = '';
+  }
+});
