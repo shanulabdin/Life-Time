@@ -30,7 +30,7 @@ const countryInput = document.querySelector('#countryInput');
 const countryBtn = document.querySelector('#countryBtn');
 
 function submit(){
-  const country = countryInput.value.trim();
+  const country = countryInput.value.trim().toLowerCase();
   console.log(country, data[country]);
 
   countryInput.value = '';
