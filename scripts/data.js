@@ -1,4 +1,4 @@
-const data = {
+export const data = {
   "Afghanistan": { "total": 66.54, "male": 68.08, "female": 64.94 },
   "Albania": { "total": 79.95, "male": 81.74, "female": 78.12 },
   "Algeria": { "total": 76.69, "male": 78.13, "female": 75.30 },
@@ -200,3 +200,6 @@ const data = {
   "Zambia": { "total": 66.70, "male": 69.07, "female": 64.25 },
   "Zimbabwe": { "total": 63.35, "male": 65.61, "female": 60.75 }
 };
+
+// Data from:
+// https://www.worldometers.info/demographics/life-expectancy
