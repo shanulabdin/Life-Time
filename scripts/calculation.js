@@ -25,22 +25,22 @@ calcBtn.addEventListener('click', percentage);
 
 // Searching from Data
 import { data } from "./data.js";
+
 const countryInput = document.querySelector('#countryInput');
 const countryBtn = document.querySelector('#countryBtn');
 
 function submit(){
-  let country;
-  let countryInputVal = countryInput.value;
-
-  country = countryInputVal
+  const country = countryInput.value.trim();
   console.log(country, data[country]);
+
+  countryInput.value = '';
+  countryInput.focus();
 }
 
 // Handle Searching Data
 function handleSubmit(e){
-  if(e.type === 'keydown' && e.key === 'Enter' || e.type === 'click'){
+  if((e.type === 'keydown' && e.key === 'Enter') || e.type === 'click'){
     submit();
-    countryInput.value = '';
   }
 }
 
