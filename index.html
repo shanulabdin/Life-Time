@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="styles/style.css">
   
   <script src="scripts/data.js" type="module" defer></script>
   <script src="scripts/calculation.js" type="module" defer></script>
@@ -10,13 +12,13 @@
   <title>Life Time</title>
 </head>
 <body>
-  <input id="ageInput" type="number" placeholder="age">
-
-  <div id="display"></div>
-
-  <p></p>
-
-  <input id="countryInput" type="text" placeholder="country">
-  <button id="countryBtn">Submit</button>
+  <div class="percentage-container">
+    <input id="ageInput" type="number" placeholder="age">
+    <input id="countryInput" type="text" placeholder="country">
+    
+    <div id="display">Display</div>
+    
+    <button id="countryBtn">Submit</button>
+  </div>
 </body>
 </html>
