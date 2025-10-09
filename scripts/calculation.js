@@ -31,7 +31,16 @@ function handleSubmit(e){
   if((e.type === 'keydown' && e.key === 'Enter') || e.type === 'click'){
     submit();
   }
+  handleGenderInput()
 }
 
 countryBtn.addEventListener('click', handleSubmit);
 countryInput.addEventListener('keydown', handleSubmit);
+
+
+// handle gender input
+function handleGenderInput(){
+
+  const genderInput = document.querySelector('#genderInput');
+  console.log(genderInput.value);
+}
