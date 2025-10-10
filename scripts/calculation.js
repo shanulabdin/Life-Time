@@ -11,7 +11,7 @@ let country;
 function submit(){
   country = countryInput.value.trim().toLowerCase();
 
-  countryInput.value = '';
+  // countryInput.value = '';
   countryInput.focus();
 
   percentage();
@@ -20,18 +20,32 @@ function submit(){
 function percentage(){
   const ageInputVal = ageInput.value;
   
-  const totalAvg = data[country].total;
+  let totalAvg;
+  
+  // Handle Gender Input
+  const genderInput = document.querySelector('#genderInput');
+
+  if (genderInput.value === 'undefined'){
+    totalAvg = data[country].total;
+    console.log(genderInput.value);
+  } else if (genderInput.value === 'male'){
+    totalAvg = data[country].male;
+    console.log(genderInput.value);
+  } else if (genderInput.value === 'female'){
+    totalAvg = data[country].female;
+    console.log(genderInput.value);
+  }
+
   const calcPercentage = ((ageInputVal / totalAvg) * 100).toFixed(2);
 
   display.innerHTML = `<p>You have lived <strong>${calcPercentage}%</strong> of your estimated life.</p>`
-}
+} 
 
 // Handle Submit Button
 function handleSubmit(e){
   if((e.type === 'keydown' && e.key === 'Enter') || e.type === 'click'){
     submit();
   }
-  handleGenderInput()
 }
 
 countryBtn.addEventListener('click', handleSubmit);
@@ -39,8 +53,7 @@ countryInput.addEventListener('keydown', handleSubmit);
 
 
 // handle gender input
-function handleGenderInput(){
+// function handleGenderInput(){
 
-  const genderInput = document.querySelector('#genderInput');
-  console.log(genderInput.value);
-}
+
+// }
