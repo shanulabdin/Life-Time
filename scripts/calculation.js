@@ -25,20 +25,18 @@ function percentage(){
   // Handle Gender Input
   const genderInput = document.querySelector('#genderInput');
 
-  if (genderInput.value === 'undefined'){
+  if (genderInput.value === 'person'){
     totalAvg = data[country].total;
-    console.log(genderInput.value);
   } else if (genderInput.value === 'male'){
     totalAvg = data[country].male;
-    console.log(genderInput.value);
   } else if (genderInput.value === 'female'){
     totalAvg = data[country].female;
-    console.log(genderInput.value);
   }
 
   const calcPercentage = ((ageInputVal / totalAvg) * 100).toFixed(2);
+  console.log(country.charAt(0).toUpperCase() + country.slice(1));
 
-  display.innerHTML = `<p>You have lived <strong>${calcPercentage}%</strong> of your estimated life.</p>`
+  display.innerHTML = `<p>You have lived <strong>${calcPercentage}%</strong> of your estimated life as per average life expectancy of an average <strong>${genderInput.value}</strong> living in <strong>${country.charAt(0).toUpperCase() + country.slice(1)}</strong>, which is <strong>${totalAvg}</strong> years .</p>`;
 } 
 
 // Handle Submit Button
