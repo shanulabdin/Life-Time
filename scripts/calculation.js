@@ -10,10 +10,7 @@ const countryBtn = document.querySelector('#countryBtn');
 let country;
 function submit(){
   country = countryInput.value.trim().toLowerCase();
-
-  // countryInput.value = '';
   countryInput.focus();
-
   percentage();
 }
 
@@ -48,10 +45,3 @@ function handleSubmit(e){
 
 countryBtn.addEventListener('click', handleSubmit);
 countryInput.addEventListener('keydown', handleSubmit);
-
-
-// handle gender input
-// function handleGenderInput(){
-
-
-// }
