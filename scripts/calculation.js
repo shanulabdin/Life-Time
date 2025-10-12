@@ -26,13 +26,10 @@ function handleGenderInput(){
 
   if (genderInput === 'person'){
     genderAvg = data[country].total;
-    console.log('person', data[country].total);
   } else if (genderInput === 'male'){
     genderAvg = data[country].male;
-    console.log('male', data[country].male);
   } else if (genderInput === 'female'){
     genderAvg = data[country].female;
-    console.log('female', data[country].female);
   }
 }
 
