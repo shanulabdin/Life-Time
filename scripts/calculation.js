@@ -10,7 +10,7 @@ const countryBtn = document.querySelector('#countryBtn');
 let country;
 let totalAvg;
 let calcPercentage;
-let gender;
+let genderInput;
 
 
 // Handle Submit Function
@@ -18,8 +18,8 @@ function submit(){
   country = countryInput.value.trim().toLowerCase();
   countryInput.focus();
   percentage();
-  displayResult();
   handleGenderInput();
+  displayResult();
 }
 
 // Calculate Percentage Function
@@ -31,13 +31,13 @@ function percentage(){
 }
 
 function displayResult(){
-  display.innerHTML = `<p>You have lived <strong>${calcPercentage}%</strong> of your estimated life as per average life expectancy of an average <strong>${genderInput.value}</strong> living in <strong>${country.charAt(0).toUpperCase() + country.slice(1)}</strong>, which is <strong>${totalAvg}</strong> years .</p>`;
+  display.innerHTML = `<p>You have lived <strong>${calcPercentage}%</strong> of your estimated life as per average life expectancy of an average <strong>${genderInput}</strong> living in <strong>${country.charAt(0).toUpperCase() + country.slice(1)}</strong>, which is <strong>${totalAvg}</strong> years .</p>`;
 }
 
 // Handle Gender Input
 function handleGenderInput(){
   const genderInputVal = document.querySelector('#genderInput');
-  genderInput = genderInputVal;
+  genderInput = genderInputVal.value;
 
   if (genderInput.value === 'person'){
     totalAvg = data[country].total;
