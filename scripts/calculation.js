@@ -9,7 +9,6 @@ const countryBtn = document.querySelector('#countryBtn');
 
 let country;
 let totalAvg;
-let calcPercentage;
 let genderInput;
 
 
@@ -17,17 +16,19 @@ let genderInput;
 function submit(){
   country = countryInput.value.trim().toLowerCase();
   countryInput.focus();
-  percentage();
   handleGenderInput();
+  percentage();
   displayResult();
 }
 
 // Calculate Percentage Function
 function percentage(){
   const ageInputVal = ageInput.value;
+  totalAvg = data[country].total;
+  let calcPercentage;
 
   calcPercentage = ((ageInputVal / totalAvg) * 100).toFixed(2);
-  console.log(country.charAt(0).toUpperCase() + country.slice(1));
+  console.log(totalAvg);
 }
 
 function displayResult(){
