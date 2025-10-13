@@ -14,8 +14,10 @@ let calcPercentage;
 
 // Handle Country Input
 function handleCountryInput(){
-  const countryInputVal = document.querySelector('#countryInput');
-  country = countryInputVal.value.toLowerCase();
+  country = countryInput.value.trim().toLowerCase();
+
+  countryInput.focus();
+  countryInput.value = '';
 }
 
 
@@ -53,6 +55,8 @@ function submit(){
   handleGenderInput();
   percentage();
   displayResult();
+  
+
 }
 
 // Handle Submit Button
