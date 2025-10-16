@@ -46,6 +46,7 @@ function percentage(){
 // Display Result Function
 function displayResult(){
   display.innerHTML = `<p>You have lived <strong>${calcPercentage}%</strong> of your estimated <strong>${genderAvg}</strong> years of your life as per average life expectancy of an average <strong>${genderInput}</strong> living in <strong>${country.charAt(0).toUpperCase() + country.slice(1)}</strong>.</p>`;
+  display.innerHTML = `<p>You’ve lived <strong>${calcPercentage}%</strong> of your estimated <strong>${genderAvg}</strong>-year lifespan, based on the average life expectancy of a <strong>${genderInput}</strong> in <strong>${country.charAt(0).toUpperCase() + country.slice(1)}</strong>.</p>`;
 }
 
 
@@ -55,8 +56,6 @@ function submit(){
   handleGenderInput();
   percentage();
   displayResult();
-  
-
 }
 
 // Handle Submit Button
