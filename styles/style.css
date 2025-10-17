@@ -21,15 +21,10 @@ body{
 input{
   padding: 10px;
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   margin: 10px 0px;
 }
-/* #ageInput{
 
-}
-#countryInput{
-
-} */
 #display{
   height: 100px;
   width: 400px;
@@ -39,7 +34,7 @@ input{
   text-align: center;
 
 }
-#countryBtn{
+#submitBtn{
   padding: 10px;
   border: none;
   background-color: rgb(255, 134, 34);
@@ -48,7 +43,7 @@ input{
   font-weight: 600;
   font-size: 20px;
 }
-#countryBtn:hover{
+#submitBtn:hover{
   background-color: rgb(163, 87, 24)
 }
 .select-container{

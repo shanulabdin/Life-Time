@@ -5,7 +5,7 @@ const ageInput = document.querySelector('#ageInput');
 const display = document.querySelector('#display');
 
 const countryInput = document.querySelector('#countryInput');
-const countryBtn = document.querySelector('#countryBtn');
+const submitBtn = document.querySelector('#submitBtn');
 
 let country;
 let genderInput;
@@ -65,5 +65,5 @@ function handleSubmit(e){
   }
 }
 
-countryBtn.addEventListener('click', handleSubmit);
+submitBtn.addEventListener('click', handleSubmit);
 countryInput.addEventListener('keydown', handleSubmit);
