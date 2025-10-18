@@ -49,9 +49,19 @@ function displayResult(){
   display.innerHTML = `<p>You’ve lived <strong>${calcPercentage}%</strong> of your estimated <strong>${genderAvg}</strong>-year lifespan, based on the average life expectancy of a <strong>${genderInput}</strong> in <strong>${country.charAt(0).toUpperCase() + country.slice(1)}</strong>.</p>`;
 }
 
+function handleError(){
+  if(!data[country] && isNaN(ageInput.value) || ageInput.value <= 0){
+    display.innerHTML = `<p class="errorMessage">Please enter a valid age and country name.</p>`;
+  } else if(isNaN(ageInput.value) || ageInput.value <= 0){
+    display.innerHTML = `<p class="errorMessage">Please enter a valid age.</p>`;
+  } else if(!data[country]){
+    display.innerHTML = `<p class="errorMessage">Please enter a valid country name.</p>`;
+  }
+}
 
 // Handle Submit Function
 function submit(){
+  handleError();
   handleCountryInput();
   handleGenderInput();
   percentage();
