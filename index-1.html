@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="styles/style.css">
+  
+  <script src="scripts/data.js" type="module" defer></script>
+  <script src="scripts/calculation.js" type="module" defer></script>
+
+  <title>Life Time</title>
+</head>
+<body>
+  <div class="percentage-container">
+    <input id="ageInput" type="number" placeholder="age">
+    <input id="countryInput" type="text" placeholder="country">
+    <input id="phoneInput" type="number" placeholder="Phone hours per day">
+    <div class="select-container">
+      <label  for="gender-options">Gender</label>
+      <select id="genderInput" class="select-options" name="gender-options">
+        <option id="option1" value="person">prefer not to say</option>
+        <option id="option2" value="male">male</option>
+        <option id="option3" value="female">female</option>
+      </select>
+    </div>
+    
+    <div id="display"></div>
+    
+    <button id="submitBtn">Submit</button>
+  </div>
+</body>
+</html>

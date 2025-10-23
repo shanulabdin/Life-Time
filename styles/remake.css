@@ -33,7 +33,9 @@ html, body {
   width: 100%;
   position: relative;
 }
-
+.gender-form-container{
+  display: none;
+}
 .form-header{
   display: flex;
   justify-content: center;
@@ -81,6 +83,78 @@ html, body {
   font-weight: 500;
 }
 .gender-from button:active{
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.birth-form-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 80%; 
+  width: 100%;
+  position: relative;
+}
+
+.date-from{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 90%;
+  height: 50%;
+  position: absolute;
+  top: 35%;
+}
+.date-from input{
+  border: none;
+  border-radius: 10px 2px 10px 2px;
+  padding: 10px;
+  width: 90%;
+  height: 18%;
+  background-color: rgb(231, 231, 231);
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 10px 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.age-input{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 80%; 
+  width: 100%;
+  position: absolute;
+  top: 25%;
+}
+
+.ageValue{
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.ageButtons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ageButtons button{
+  padding: 10px;
+  border: none;
+  border-radius: 10px 2px 10px 2px;
+  background-color: rgb(231, 231, 231);
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 10px;
+}
+
+.ageButtons button:active{
   background-color: #000000;
   color: #ffffff;
 }

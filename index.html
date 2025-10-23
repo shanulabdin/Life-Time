@@ -3,31 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link rel="stylesheet" href="styles/style.css">
-  
-  <script src="scripts/data.js" type="module" defer></script>
-  <script src="scripts/calculation.js" type="module" defer></script>
-
-  <title>Life Time</title>
+  <link rel="stylesheet" href="styles/remake.css">
+  <title>Life-Time</title>
 </head>
 <body>
-  <div class="percentage-container">
-    <input id="ageInput" type="number" placeholder="age">
-    <input id="countryInput" type="text" placeholder="country">
-    <input id="phoneInput" type="number" placeholder="Phone hours per day">
-    <div class="select-container">
-      <label  for="gender-options">Gender</label>
-      <select id="genderInput" class="select-options" name="gender-options">
-        <option id="option1" value="person">prefer not to say</option>
-        <option id="option2" value="male">male</option>
-        <option id="option3" value="female">female</option>
-      </select>
+  <div id="page">
+    <div class="loader">
+      <div></div>
     </div>
-    
-    <div id="display"></div>
-    
-    <button id="submitBtn">Submit</button>
+
+    <div class="form">
+      <div class="gender-form-container">
+        <div class="form-header">
+          <h2>Choose your Gender</h2>
+          <p>This will be used to calculate your life expectancy</p>
+        </div>
+        
+        <div class="gender-from">
+          <button>Female</button>
+          <button>Male</button>
+          <button>Other</button>
+        </div>
+      </div>
+
+      <div class="birth-form-container">
+        <div class="form-header">
+          <h2>How old are you?</h2>
+          <p>This will be used to calculate your life expectancy</p>
+        </div>
+        
+        <div class="age-input">
+          <div class="ageValue">18</div>
+          <div class="ageButtons">
+            <button class="minusBtn">-</button>
+            <button class="addBtn">+</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="navigation-buttons">
+        <button>Back</button>
+        <button>Next</button>
+      </div>
+    </div>
   </div>
+
+  <script>
+    const ageValue = document.querySelector('.ageValue');
+    const minusBtn = document.querySelector('.minusBtn');
+    const addBtn = document.querySelector('.addBtn');
+
+    let age = 18;
+    function updateAge() {
+      ageValue.textContent = age;
+    }
+    minusBtn.addEventListener('click', () => {
+      if (age > 0) {
+        age--;
+        updateAge();
+      }
+    });
+    addBtn.addEventListener('click', () => {
+      age++;
+      updateAge();
+    });
+  </script>
 </body>
 </html>

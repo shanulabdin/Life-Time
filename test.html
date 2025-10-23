@@ -1,30 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Disable Input Example</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  display: grid;
+  place-content: center;
+  min-height: 100svh;
+  margin: 0;
+  background: #fff;
+}
+  </style>
 </head>
 <body>
+  <div class="picker" id="yearPicker">
+    <ul class="list" id="yearList">
+      <li class="spacer"></li>
+      <li class="spacer"></li>
+    </ul>
+  </div>
 
-<label for="validationInput">Enter "correct":</label>
-<input type="text" id="validationInput" onkeyup="checkInput()">
-
-<br><br>
-
-<label for="restrictedInput">This input is disabled until correct:</label>
-<input type="text" id="restrictedInput" disabled>
-
-<script>
-function checkInput() {
-  const validationInput = document.getElementById('validationInput');
-  const restrictedInput = document.getElementById('restrictedInput');
-
-  if (validationInput.value.toLowerCase() === 'correct') {
-    restrictedInput.disabled = false; // Enable the input
-  } else {
-    restrictedInput.disabled = true;  // Keep it disabled
-  }
-}
-</script>
-
+  <div class="value">Selected year: <strong id="out">1</strong></div>
 </body>
 </html>
