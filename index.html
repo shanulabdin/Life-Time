@@ -3,85 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles/remake.css">
-  <title>Life-Time</title>
+  <title>One Page</title>
+  <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-  <div id="page">
-    <div class="loader">
-      <div></div>
+  <div class="form-container">
+    <div>
+      <label>Age</label>
+      <input type="number" placeholder="Enter your age">
     </div>
-
-    <div class="form">
-      <div class="gender-form-container">
-        <div class="form-header">
-          <h2>Choose your Gender</h2>
-          <p>This will be used to calculate your life expectancy</p>
-        </div>
-        
-        <div class="gender-from">
-          <button>Female</button>
-          <button>Male</button>
-          <button>Other</button>
-        </div>
-      </div>
-
-      <div class="birth-form-container">
-        <div class="form-header">
-          <h2>How old are you?</h2>
-          <p>This will be used to calculate your life expectancy</p>
-        </div>
-        
-        <div class="age-input">
-          <div class="ageValue">18</div>
-          <div class="ageButtons">
-            <button class="minusBtn">-</button>
-            <button class="addBtn">+</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="phone-form-container">
-        <div class="form-header">
-          <h2>How much time you spend on Phone?</h2>
-          <p>This will be used to calculate your life expectancy</p>
-        </div>
-        
-        <div class="phone-input">
-          <div class="phoneValue">4</div>
-          <div class="addButtons">
-            <button class="minusBtn">-</button>
-            <button class="addBtn">+</button>
-          </div>
-        </div>
-      </div>
-      
-      <div class="navigation-buttons">
-        <button>Back</button>
-        <button>Next</button>
-      </div>
+    <div>
+      <label>Gender</label>
+      <input type="text" placeholder="Select Gender">
+    </div>
+    <div>
+      <label>Country</label>
+      <input type="text" placeholder="Select Country">
+    </div>
+    <div>
+      <label>Time on Phone</label>
+      <input type="number" placeholder="Enter hours per day">
+    </div>
+    <div>
+      <label>Sleep</label>
+      <input type="number" placeholder="Enter hours per night">
+    </div>
+    <div>
+      <label>Work</label>
+      <input type="number" placeholder="Enter hours per day">
+    </div>
+    <div class="submit-btn">
+      <button>Submit</button>
     </div>
   </div>
-
-  <script>
-    const ageValue = document.querySelector('.ageValue');
-    const minusBtn = document.querySelector('.minusBtn');
-    const addBtn = document.querySelector('.addBtn');
-
-    let age = 18;
-    function updateAge() {
-      ageValue.textContent = age;
-    }
-    minusBtn.addEventListener('click', () => {
-      if (age > 0) {
-        age--;
-        updateAge();
-      }
-    });
-    addBtn.addEventListener('click', () => {
-      age++;
-      updateAge();
-    });
-  </script>
 </body>
 </html>
