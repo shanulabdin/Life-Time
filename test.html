@@ -1,39 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+<title>Disable Input Example</title>
 </head>
 <body>
-  <label>
-    Enter value:
-    <input type="text" id="myInput" placeholder="Type something..." />
-  </label>
 
-  <label>
-    Choose option:
-    <select id="mySelect">
-      <option value="">--Select--</option>
-      <option value="years">Years</option>
-      <option value="months">Months</option>
-      <option value="days">Days</option>
-    </select>
-  </label>
+<label for="validationInput">Enter "correct":</label>
+<input type="text" id="validationInput" onkeyup="checkInput()">
 
-  <button onclick="handleSubmit()">Submit</button>
+<br><br>
 
-  <script>
-    function handleSubmit() {
-      const inputValue = document.getElementById("myInput").value;
-      const dropdownValue = document.getElementById("mySelect").value;
+<label for="restrictedInput">This input is disabled until correct:</label>
+<input type="text" id="restrictedInput" disabled>
 
-      console.log("Input:", inputValue);
-      console.log("Selected:", dropdownValue);
+<script>
+function checkInput() {
+  const validationInput = document.getElementById('validationInput');
+  const restrictedInput = document.getElementById('restrictedInput');
 
-      alert(`You entered: ${inputValue} and chose: ${dropdownValue}`);
-    }
-  </script>
+  if (validationInput.value.toLowerCase() === 'correct') {
+    restrictedInput.disabled = false; // Enable the input
+  } else {
+    restrictedInput.disabled = true;  // Keep it disabled
+  }
+}
+</script>
 
 </body>
 </html>
