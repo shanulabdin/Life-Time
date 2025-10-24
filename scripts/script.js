@@ -1,3 +1,4 @@
+// inputs
 const ageInput = document.getElementById('ageInput');
 const genderInput = document.getElementById('genderInput');
 const countryInput = document.getElementById('countryInput');
@@ -5,50 +6,41 @@ const phoneInput = document.getElementById('phoneInput');
 const sleepInput = document.getElementById('sleepInput');
 const workInput = document.getElementById('workInput');
 const submitBtn = document.getElementById('submitBtn');
+const form = document.getElementById('userForm');
 
-import { data } from "../scripts/data.js";
-
+// If you still need data.js here, keep it. If not, remove this import.
+// import { data } from "../scripts/data.js";
 
 submitBtn.disabled = true;
 
-let ageVal;
-let genderVal;
-let countryVal;
-let phoneVal;
-let sleepVal;
-let workVal;
-
 function checkFormValidity(){
-  ageVal = ageInput.value.trim();
-  genderVal = genderInput.value.trim().toLowerCase();
-  countryVal = countryInput.value.trim().toLowerCase();
-  phoneVal = phoneInput.value.trim();
-  sleepVal = sleepInput.value.trim();
-  workVal = workInput.value.trim();
+  const ageVal = ageInput.value.trim();
+  const genderVal = genderInput.value.trim().toLowerCase();
+  const countryVal = countryInput.value.trim().toLowerCase();
+  const phoneVal = phoneInput.value.trim();
+  const sleepVal = sleepInput.value.trim();
+  const workVal = workInput.value.trim();
 
-  if(ageVal && genderVal && countryVal && phoneVal && sleepVal && workVal){
-    submitBtn.disabled = false;
-  } else {
-    submitBtn.disabled = true;
-  }
+  submitBtn.disabled = !(ageVal && genderVal && countryVal && phoneVal && sleepVal && workVal);
 }
 
-ageInput.addEventListener('input', checkFormValidity);
-genderInput.addEventListener('input', checkFormValidity);
-countryInput.addEventListener('input', checkFormValidity);
-phoneInput.addEventListener('input', checkFormValidity);
-sleepInput.addEventListener('input', checkFormValidity);
-workInput.addEventListener('input', checkFormValidity);
+[ageInput, genderInput, countryInput, phoneInput, sleepInput, workInput]
+  .forEach(el => el.addEventListener('input', checkFormValidity));
 
+// ONE submit flow: handle the form submit (remove any separate click handler)
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
 
-function submitData(){
-  console.log('Age: ', ageVal);
-  console.log('Gender: ', genderVal);
-  console.log('Country: ', countryVal);
-  console.log('Phone: ', phoneVal);
-  console.log('Sleep: ', sleepVal);
-  console.log('Work:', workVal);
-  console.log('Life Expectancy: ', data[countryVal][genderVal]);
-}
+  const age     = ageInput.value.trim();
+  const gender  = genderInput.value.trim().toLowerCase();
+  const country = countryInput.value.trim().toLowerCase();
+  const phone   = phoneInput.value.trim();
+  const sleep   = sleepInput.value.trim();
+  const work    = workInput.value.trim();
 
-submitBtn.addEventListener('click', submitData);
+  // See values before navigating
+  console.log({ age, gender, country, phone, sleep, work });
+
+  const params = new URLSearchParams({ age, gender, country, phone, sleep, work });
+  window.location.href = `display.html?${params.toString()}`;
+});
