@@ -32,7 +32,7 @@ form.addEventListener('submit', (e) => {
   e.preventDefault();
 
   const age     = ageInput.value.trim();
-  const gender  = genderInput.value.trim().toLowerCase();
+  const gender  = genderInput.value.trim();
   const country = countryInput.value.trim().toLowerCase();
   const phone   = phoneInput.value.trim();
   const sleep   = sleepInput.value.trim();
