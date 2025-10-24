@@ -19,3 +19,19 @@ body{
   align-items: center;
   flex-direction: column;
 }
+.dots {
+  --dot: 18px;   /* size */
+  --gap: 6px;    /* gap */
+  display: grid;
+  grid-template-columns: repeat(10, var(--dot));
+  gap: var(--gap);
+}
+.dot {
+  width: var(--dot);
+  height: var(--dot);
+  border-radius: 50%;
+  background: #ffffff;
+}
+.dot.filled { 
+  background: #000000; 
+}
