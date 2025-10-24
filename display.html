@@ -5,6 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Results</title>
   <link rel="stylesheet" href="styles/display.css">
+<style>
+  .dots {
+    --dot: 18px;   /* size */
+    --gap: 6px;    /* gap */
+    display: grid;
+    grid-template-columns: repeat(10, var(--dot));
+    gap: var(--gap);
+  }
+  .dot {
+    width: var(--dot);
+    height: var(--dot);
+    border-radius: 50%;
+    background: #ffffff;
+  }
+  .dot.filled { background: #000000; }
+</style>
 </head>
 <body>
   <h2>Life Time</h2>
@@ -12,6 +28,27 @@
     <h2>Your Results</h2>
     <div id="out"></div>
   </div>
+
+<div id="dots" class="dots" aria-label="Life progress grid" role="img"></div>
+
+<script>
+function renderLifeGridHTML(containerId, percent = 0) {
+  const cols = 10, rows = 10, total = cols * rows;
+  const filled = Math.round((percent / 100) * total);
+
+  const container = document.getElementById(containerId);
+  container.innerHTML = ''; // clear
+  for (let i = 0; i < total; i++) {
+    const d = document.createElement('span');
+    d.className = 'dot' + (i < filled ? ' filled' : '');
+    container.appendChild(d);
+  }
+}
+
+// Example: 63% filled
+renderLifeGridHTML('dots', 63);
+</script>
+
 
   <script type="module" src="scripts/display.js"></script>
 </body>
