@@ -42,15 +42,13 @@ workInput.addEventListener('input', checkFormValidity);
 
 
 function submitData(){
-  console.log(
-    ageInput.value,
-    genderInput.value,
-    countryInput.value,
-    phoneInput.value,
-    sleepInput.value,
-    workInput.value
-  );
-console.log(data[countryVal][genderVal]);
+  console.log('Age: ', ageVal);
+  console.log('Gender: ', genderVal);
+  console.log('Country: ', countryVal);
+  console.log('Phone: ', phoneVal);
+  console.log('Sleep: ', sleepVal);
+  console.log('Work:', workVal);
+  console.log('Life Expectancy: ', data[countryVal][genderVal]);
 }
 
 submitBtn.addEventListener('click', submitData);
