@@ -6,7 +6,7 @@
   <title>Life-Time</title>
   <link rel="stylesheet" href="styles/style.css">
 
-  <script src="scripts/script.js" defer></script>
+  <script type="module" src="scripts/script.js" defer></script>
 </head>
 <body>
   <h2>Life-Time</h2>
@@ -20,7 +20,7 @@
       <select id="genderInput" name="gender" class="gender-select">
         <option value="male">Male</option>
         <option value="female">Female</option>
-        <option value="other">Other</option>
+        <option value="person">Other</option>
       </select>
     </div>
     <div>
@@ -40,7 +40,7 @@
       <input id="workInput" type="number" placeholder="Enter hours per day" max="24" min="0">
     </div>
     <div class="submit-btn">
-      <button id="submitBtn" disabled>Submit</button>
+      <button id="submitBtn">Submit</button>
     </div>
   </div>
 </body>

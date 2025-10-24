@@ -6,15 +6,25 @@ const sleepInput = document.getElementById('sleepInput');
 const workInput = document.getElementById('workInput');
 const submitBtn = document.getElementById('submitBtn');
 
+import { data } from "../scripts/data.js";
+
+
 submitBtn.disabled = true;
 
+let ageVal;
+let genderVal;
+let countryVal;
+let phoneVal;
+let sleepVal;
+let workVal;
+
 function checkFormValidity(){
-  const ageVal = ageInput.value.trim();
-  const genderVal = genderInput.value.trim();
-  const countryVal = countryInput.value.trim();
-  const phoneVal = phoneInput.value.trim();
-  const sleepVal = sleepInput.value.trim();
-  const workVal = workInput.value.trim();
+  ageVal = ageInput.value.trim();
+  genderVal = genderInput.value.trim().toLowerCase();
+  countryVal = countryInput.value.trim().toLowerCase();
+  phoneVal = phoneInput.value.trim();
+  sleepVal = sleepInput.value.trim();
+  workVal = workInput.value.trim();
 
   if(ageVal && genderVal && countryVal && phoneVal && sleepVal && workVal){
     submitBtn.disabled = false;
@@ -30,6 +40,7 @@ phoneInput.addEventListener('input', checkFormValidity);
 sleepInput.addEventListener('input', checkFormValidity);
 workInput.addEventListener('input', checkFormValidity);
 
+
 function submitData(){
   console.log(
     ageInput.value,
@@ -39,6 +50,7 @@ function submitData(){
     sleepInput.value,
     workInput.value
   );
+console.log(data[countryVal][genderVal]);
 }
 
 submitBtn.addEventListener('click', submitData);
