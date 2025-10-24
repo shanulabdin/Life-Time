@@ -31,16 +31,17 @@ function checkFormValidity(){
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 
-  const age     = ageInput.value.trim();
-  const gender  = genderInput.value.trim();
-  const country = countryInput.value.trim().toLowerCase();
-  const phone   = phoneInput.value.trim();
-  const sleep   = sleepInput.value.trim();
-  const work    = workInput.value.trim();
+  const payload = {
+    age     : ageInput.value.trim(),
+    gender  : genderInput.value.trim(),
+    country : countryInput.value.trim().toLowerCase(),
+    phone   : phoneInput.value.trim(),
+    sleep   : sleepInput.value.trim(),
+    work    : workInput.value.trim()
+  }
 
   // See values before navigating
-  console.log({ age, gender, country, phone, sleep, work });
-
-  const params = new URLSearchParams({ age, gender, country, phone, sleep, work });
-  window.location.href = `display.html?${params.toString()}`;
+  
+  localStorage.setItem('lifeTimeForm', JSON.stringify(payload));
+  window.location.href = 'display.html'
 });
