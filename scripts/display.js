@@ -19,7 +19,7 @@ console.log('payload: ', payload);
 //                   <p>Sleep: ${sleep}</p>
 //                   <p>Work: ${work}</p>`;
 
-function renderDots(){
+function renderDots(filled){
   const years = 100;
   const container = document.getElementById('dots');
   
@@ -27,6 +27,10 @@ function renderDots(){
     const d = document.createElement('span');
     d.classList.add('dot');
     container.appendChild(d);
+
+    if(i < filled){
+      d.classList.add('filled');
+    }
   }
 }
-renderDots();
+renderDots(13);
