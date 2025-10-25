@@ -36,3 +36,6 @@ body{
 .dot.filled { 
   background: #000000; 
 }
+.dot.sleep {
+  background: orange;
+}
