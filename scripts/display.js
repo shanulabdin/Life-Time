@@ -11,13 +11,13 @@ try {
 }
 
 const { age, gender, country, phone, sleep, work } = payload;
-console.log(payload)
-
 
 const lifeExpectancy = Math.round(data[country][gender]);
 const sleepYears = Math.round((sleep / 24) * (lifeExpectancy - age));
 const workYears = Math.round((work / 24) * (lifeExpectancy - age));
 const phoneYears = Math.round((phone / 24) * (lifeExpectancy - age));
+const choreYears = Math.round((2 / 24) * (lifeExpectancy - age));
+console.log(choreYears);
 
 function renderDots(lived, sleepYears){
   const container = document.getElementById('dots');
@@ -25,6 +25,7 @@ function renderDots(lived, sleepYears){
   let sleepAssigned = 0;
   let workAssigned = 0;
   let phoneAssigned = 0;
+  let choreAssigned = 0;
 
   for(let i = 0; i < lifeExpectancy; i++){
     const d = document.createElement('span');
@@ -38,6 +39,9 @@ function renderDots(lived, sleepYears){
     } else if(workAssigned < workYears){
       d.classList.add('work');
       workAssigned++;
+    } else if(choreAssigned < choreYears){
+      d.classList.add('chore');
+      choreAssigned++;
     } else if(phoneAssigned < phoneYears){
       d.classList.add('phone');
       phoneAssigned++;
@@ -46,3 +50,6 @@ function renderDots(lived, sleepYears){
   }
 }
 renderDots(age, sleepYears);
+
+const displayText = document.querySelector('.displayText');
+displayText.innerHTML = `<p>You have already lived <u>${age}</u> years of your expected <u>${lifeExpectancy}</u> years of life.</p>`;
