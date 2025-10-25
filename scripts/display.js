@@ -19,20 +19,14 @@ console.log('payload: ', payload);
 //                   <p>Sleep: ${sleep}</p>
 //                   <p>Work: ${work}</p>`;
 
-function renderLifeGridHTML(percent) {
-  const cols = 10;
-  const rows = 10;
-  const total = cols * rows;
-  const filled = Math.round((percent / 100) * total);
-
+function renderDots(){
+  const years = 100;
   const container = document.getElementById('dots');
-  container.innerHTML = ''; // clear
   
-  for (let i = 0; i < total; i++) {
+  for(let i = 0; i < years; i++){
     const d = document.createElement('span');
-    d.className = 'dot' + (i < filled ? ' filled' : '');
+    d.classList.add('dot');
     container.appendChild(d);
   }
 }
-
-renderLifeGridHTML(2);
+renderDots();
