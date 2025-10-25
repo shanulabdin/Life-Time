@@ -26,11 +26,14 @@ const lifeExpectancy = Math.round(data[country][gender]);
 console.log(lifeExpectancy);
 const sleepYears = Math.round((sleep / 24) * (lifeExpectancy - age));
 console.log(sleepYears);
+const workYears = Math.round((work / 24) * (lifeExpectancy - age));
+console.log(workYears);
 
 function renderDots(lived, sleepYears){
   const container = document.getElementById('dots');
   
   let sleepAssigned = 0;
+  let workAssigned = 0;
 
   for(let i = 0; i < lifeExpectancy; i++){
     const d = document.createElement('span');
@@ -41,6 +44,9 @@ function renderDots(lived, sleepYears){
     } else if(sleepAssigned < sleepYears){
       d.classList.add('sleep');
       sleepAssigned++;
+    } else if(workAssigned < workYears){
+      d.classList.add('work');
+      workAssigned++;
     }
     container.appendChild(d);
   }

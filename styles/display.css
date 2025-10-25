@@ -39,3 +39,6 @@ body{
 .dot.sleep {
   background: orange;
 }
+.dot.work {
+  background: rgb(68, 107, 37);
+}
