@@ -11,20 +11,23 @@ try {
 const { age, gender, country, phone, sleep, work } = payload;
 console.log('payload: ', payload);
 
-const out = document.getElementById('out');
-out.innerHTML =  `<p>Age: ${age}</p>
-                  <p>Gender: ${gender}</p>
-                  <p>Country: ${country}</p>
-                  <p>Phone Time: ${phone}</p>
-                  <p>Sleep: ${sleep}</p>
-                  <p>Work: ${work}</p>`;
+// const out = document.getElementById('out');
+// out.innerHTML =  `<p>Age: ${age}</p>
+//                   <p>Gender: ${gender}</p>
+//                   <p>Country: ${country}</p>
+//                   <p>Phone Time: ${phone}</p>
+//                   <p>Sleep: ${sleep}</p>
+//                   <p>Work: ${work}</p>`;
 
-function renderLifeGridHTML(containerId, percent = 0) {
-  const cols = 10, rows = 10, total = cols * rows;
+function renderLifeGridHTML(percent) {
+  const cols = 10;
+  const rows = 10;
+  const total = cols * rows;
   const filled = Math.round((percent / 100) * total);
 
-  const container = document.getElementById(containerId);
+  const container = document.getElementById('dots');
   container.innerHTML = ''; // clear
+  
   for (let i = 0; i < total; i++) {
     const d = document.createElement('span');
     d.className = 'dot' + (i < filled ? ' filled' : '');
@@ -32,5 +35,4 @@ function renderLifeGridHTML(containerId, percent = 0) {
   }
 }
 
-// Example: 63% filled
-renderLifeGridHTML('dots', 63);
+renderLifeGridHTML(2);
