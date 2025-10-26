@@ -27,7 +27,7 @@ body{
   font-size: 30px;
   font-family: "Poppins", sans-serif;
 }
-.dots {
+.livedDots {
   --dot: 20px;   /* size */
   --gap: 6px;    /* gap */
   display: grid;
@@ -36,7 +36,11 @@ body{
   /* position: absolute;
   top: 200px; */
 }
-.sleepDots {
+.sleepDots, 
+.workDots, 
+.phoneDots, 
+.choreDots, 
+.freeDots{
   --dot: 20px;   /* size */
   --gap: 6px;    /* gap */
   display: grid;

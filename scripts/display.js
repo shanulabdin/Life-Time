@@ -19,13 +19,8 @@ const phoneYears = Math.round((phone / 24) * (lifeExpectancy - age));
 const choreYears = Math.round((2 / 24) * (lifeExpectancy - age));
 console.log(choreYears);
 
-function renderDots(lived, sleepYears){
-  const container = document.getElementById('dots');
-  
-  let sleepAssigned = 0;
-  let workAssigned = 0;
-  let phoneAssigned = 0;
-  let choreAssigned = 0;
+function renderDots(lived){
+  const container = document.getElementById('livedDots');
 
   for(let i = 0; i < lifeExpectancy; i++){
     const d = document.createElement('span');
@@ -33,18 +28,6 @@ function renderDots(lived, sleepYears){
     
     if(i < lived){
       d.classList.add('filled');
-    // } else if(sleepAssigned < sleepYears){
-    //   d.classList.add('sleep');
-    //   sleepAssigned++;
-    // } else if(workAssigned < workYears){
-    //   d.classList.add('work');
-    //   workAssigned++;
-    // } else if(choreAssigned < choreYears){
-    //   d.classList.add('chore');
-    //   choreAssigned++;
-    // } else if(phoneAssigned < phoneYears){
-    //   d.classList.add('phone');
-    //   phoneAssigned++;
     }
     container.appendChild(d);
   }
@@ -72,3 +55,7 @@ function renderSleepDots(sleepYears){
 renderSleepDots(sleepYears);
 
 
+function renderWorkDots(){
+  const container = document.getElementById('workDots')
+
+}
