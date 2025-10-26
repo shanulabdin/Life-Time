@@ -19,27 +19,27 @@ const phoneYears = Math.round((phone / 24) * (lifeExpectancy - age));
 const choreYears = Math.round((2 / 24) * (lifeExpectancy - age));
 
 // lived section
-function renderDots(lived){
+function renderDots(){
   const container = document.getElementById('livedDots');
 
   for(let i = 0; i < lifeExpectancy; i++){
     const d = document.createElement('span');
     d.classList.add('dot');
     
-    if(i < lived){
+    if(i < age){
       d.classList.add('filled');
     }
     container.appendChild(d);
   }
 }
-renderDots(age, sleepYears);
+renderDots();
 
 const livedText = document.querySelector('.livedText');
 livedText.innerHTML = `<p>You have already lived <u>${age}</u> years of your expected <u>${lifeExpectancy}</u> years of life.</p>`;
 
 // sleep section
 const remainingLife = lifeExpectancy - age;
-function renderSleepDots(sleepYears){
+function renderSleepDots(){
   const container = document.getElementById('sleepDots');
 
   let sleepAssigned = 0;
@@ -54,14 +54,14 @@ function renderSleepDots(sleepYears){
     container.appendChild(s);
   }
 } 
-renderSleepDots(sleepYears);
+renderSleepDots();
 
 const sleepText = document.querySelector('.sleepText');
 sleepText.innerHTML = `<p>Sleeping will take <u>${sleepYears}</u> years of your remaining <u>${remainingLife}</u> years.</p>`;
 
 // work section
 const lifeAfterSleep = lifeExpectancy - age - sleepYears;
-function renderWorkDots(workYears){
+function renderWorkDots(){
   const container = document.getElementById('workDots');
 
   for(let i = 0; i < lifeAfterSleep; i++){
@@ -74,7 +74,28 @@ function renderWorkDots(workYears){
     container.appendChild(d);
   }
 } 
-renderWorkDots(workYears);
+renderWorkDots();
 
 const workText = document.querySelector('.workText');
 workText.innerHTML = `<p>Work will take <u>${workYears}</u> years of your remaining <u>${lifeAfterSleep}</u> years.</p>`;
+
+
+// phone section
+const lifeAfterWork = lifeExpectancy - age - sleepYears - workYears;
+function renderPhoneDots(){
+  const container = document.getElementById('phoneDots');
+
+  for(let i = 0; i < lifeAfterWork; i++){
+    const d = document.createElement('span');
+    d.classList.add('dot');
+
+    if(i < phoneYears){
+      d.classList.add('phone');
+    }
+    container.appendChild(d);
+  }
+}
+renderPhoneDots();
+
+const phoneText = document.querySelector('.phoneText');
+phoneText.innerHTML = `<p>Phone Time will take <u>${phoneYears}</u> years of your remaining <u>${lifeAfterWork}</u> years.</p>`;
