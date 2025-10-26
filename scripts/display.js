@@ -55,7 +55,7 @@ function renderSleepDots(sleepYears){
 renderSleepDots(sleepYears);
 
 const sleepText = document.querySelector('.sleepText');
-sleepText.innerHTML = `<p>You have already lived <u>${age}</u> years of your expected <u>${lifeExpectancy}</u> years of life.</p>`;
+sleepText.innerHTML = `<p>Sleeping will take <u>${sleepYears}</u> years of your remaining <u>${lifeExpectancy - age}</u> years.</p>`;
 
 
 // function renderWorkDots(){
