@@ -71,7 +71,12 @@ body{
 .dot.chore {
   background: rgb(103, 32, 151);
 }
-.displayText{
+.livedText,
+.sleepText,
+.workText,
+.phoneText,
+.choreText,
+.freeText{
   display: flex;
   width: 400px;
   height: 100px;

@@ -34,8 +34,8 @@ function renderDots(lived){
 }
 renderDots(age, sleepYears);
 
-const displayText = document.querySelector('.displayText');
-displayText.innerHTML = `<p>You have already lived <u>${age}</u> years of your expected <u>${lifeExpectancy}</u> years of life.</p>`;
+const livedText = document.querySelector('.livedText');
+livedText.innerHTML = `<p>You have already lived <u>${age}</u> years of your expected <u>${lifeExpectancy}</u> years of life.</p>`;
 
 function renderSleepDots(sleepYears){
   const container = document.getElementById('sleepDots');
@@ -54,8 +54,12 @@ function renderSleepDots(sleepYears){
 } 
 renderSleepDots(sleepYears);
 
+const sleepText = document.querySelector('.sleepText');
+sleepText.innerHTML = `<p>You have already lived <u>${age}</u> years of your expected <u>${lifeExpectancy}</u> years of life.</p>`;
 
-function renderWorkDots(){
-  const container = document.getElementById('workDots')
 
-}
+// function renderWorkDots(){
+//   const container = document.getElementById('workDots');
+
+
+// } 
