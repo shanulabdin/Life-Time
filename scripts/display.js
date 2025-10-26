@@ -99,3 +99,24 @@ renderPhoneDots();
 
 const phoneText = document.querySelector('.phoneText');
 phoneText.innerHTML = `<p>Phone Time will take <u>${phoneYears}</u> years of your remaining <u>${lifeAfterWork}</u> years.</p>`;
+
+
+// chore section
+const lifeAfterPhone = lifeExpectancy - age - sleepYears - workYears - phoneYears;
+function renderChoreSection(){
+  const container = document.getElementById('choreDots');
+
+  for(let i = 0; i < lifeAfterPhone; i++){
+    const d = document.createElement('span');
+    d.classList.add('dot');
+
+    if(i < choreYears){
+      d.classList.add('chore');
+    }
+    container.appendChild(d);
+  }
+}
+renderChoreSection();
+
+const choreText = document.querySelector('.choreText');
+choreText.innerHTML = `<p>Eating, drinking and other daily chores will take <u>${choreYears}</u> years of your remaining <u>${lifeAfterPhone}</u> years.</p>`;
