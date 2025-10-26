@@ -120,3 +120,21 @@ renderChoreSection();
 
 const choreText = document.querySelector('.choreText');
 choreText.innerHTML = `<p>Eating, drinking and other daily chores will take <u>${choreYears}</u> years of your remaining <u>${lifeAfterPhone}</u> years.</p>`;
+
+
+// free section
+const lifeAfterChore = lifeExpectancy - age - sleepYears - workYears - phoneYears - choreYears;
+function renderFreeSection(){
+  const container = document.getElementById('freeDots');
+
+  for(let i = 0; i < lifeAfterChore; i++){
+    const d = document.createElement('span');
+    d.classList.add('dot');
+
+    container.appendChild(d);
+  }
+}
+renderFreeSection();
+
+const freeText = document.querySelector('.freeText');
+freeText.innerHTML = `<p><u>${lifeAfterChore}</u> out of ${remainingLife} years, is the time you actually have for yourself, in these ${lifeAfterChore} years you have to fulfill all your dreams, travel the world, make memories, leave your mark on the world, and live fully.</p>`;
