@@ -142,7 +142,24 @@ freeText.innerHTML = `<p><u>${lifeAfterChore}</u> years, is the time you actuall
 
 
 const sections = [...document.querySelectorAll('.page-section')];
-document.getElementById('next-btn').addEventListener('click', () => {
-  const next = sections.find(s => s.getBoundingClientRect().top > 1) || sections[0];
-  next.scrollIntoView({ behavior: 'smooth', block: 'start' });
-});
+const scrollBtn = document.querySelector('.scrollBtn');
+
+scrollBtn.addEventListener('click', () => {
+  let nextSection = null;
+
+  for(let i = 0; i < sections.length; i++){
+    const next = sections[i].getBoundingClientRect();
+
+    if(next.top > 1){
+      nextSection = sections[i];
+      break;
+    }
+  }
+
+  if(!nextSection){
+    nextSection = sections[0];
+  }
+  nextSection.scrollIntoView({
+    behavior: 'smooth'
+  })
+})
