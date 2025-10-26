@@ -35,7 +35,7 @@ function renderDots(){
 renderDots();
 
 const livedText = document.querySelector('.livedText');
-livedText.innerHTML = `<p>You've already lived <u>${age}</u> years of your <u>${lifeExpectancy}</u> expected years.</p>`;
+livedText.innerHTML = `<p>You've already lived <u>${age}</u> years of your expected <u>${lifeExpectancy}</u> years.</p>`;
 
 // sleep section
 const remainingLife = lifeExpectancy - age;
@@ -138,7 +138,7 @@ function renderFreeSection(){
 renderFreeSection();
 
 const freeText = document.querySelector('.freeText');
-freeText.innerHTML = `<p>That leaves roughly <u>${lifeAfterChore}</u> years that are entirely yours. Spend them on what you truly care about! your dreams, the people you love, and the memories you want to keep. ${lifeAfterChore} years is precious. Make it count..</p>`;
+freeText.innerHTML = `<p>That leaves roughly <u>${lifeAfterChore}</u> years that are entirely yours. Make them count..</p>`;
 
 
 const sections = [...document.querySelectorAll('.page-section')];

@@ -68,13 +68,13 @@ body{
   background: orange;
 }
 .dot.work {
-  background: rgb(68, 107, 37);
+  background: rgb(68, 151, 0);
 }
 .dot.phone {
-  background: rgb(32, 133, 151);
+  background: rgb(0, 114, 190);
 }
 .dot.chore {
-  background: rgb(103, 32, 151);
+  background: rgb(114, 0, 190);
 }
 .dot.free {
   background: rgb(0, 0, 0);
