@@ -48,12 +48,7 @@ body{
   width: calc(var(--cols) * var(--dot) + (var(--cols) - 1) * var(--gap)); /* fixes row width */
   justify-content: center;
 }
-.freeDots > *{
-  width: var(--dot);
-  height: var(--dot);
-  border-radius: 50%;
-  flex: 0 0 var(--dot); /* fixed “cell” width */
-}
+
 .dot {
   width: var(--dot);
   height: var(--dot);
@@ -79,6 +74,11 @@ body{
 .dot.free {
   background: rgb(0, 0, 0);
 }
+
+.page-section{
+  width: 280px;
+
+}
 .livedText,
 .sleepText,
 .workText,
@@ -86,7 +86,6 @@ body{
 .choreText,
 .freeText{
   display: flex;
-  width: 65vw;
   height: auto;
   text-align: center;
   justify-content: center;

@@ -98,7 +98,7 @@ function renderPhoneDots(){
 renderPhoneDots();
 
 const phoneText = document.querySelector('.phoneText');
-phoneText.innerHTML = `<p>Roughly <u>${phoneYears}</u> years will be spent on screens..</p>`;
+phoneText.innerHTML = `<p>Roughly <u>${phoneYears}</u> years will be spent on scrolling..</p>`;
 
 
 // chore section
@@ -119,7 +119,7 @@ function renderChoreSection(){
 renderChoreSection();
 
 const choreText = document.querySelector('.choreText');
-choreText.innerHTML = `<p>Another <u>${choreYears}</u> will be spent on eating, drinking, and daily chores..</p>`;
+choreText.innerHTML = `<p>Another <u>${choreYears}</u> years will be spent on eating, drinking, and daily chores..</p>`;
 
 
 // free section
@@ -138,7 +138,7 @@ function renderFreeSection(){
 renderFreeSection();
 
 const freeText = document.querySelector('.freeText');
-freeText.innerHTML = `<p>That leaves roughly <u>${lifeAfterChore}</u> years that are entirely yours. Make them count..</p>`;
+freeText.innerHTML = `<p>That leaves roughly <u>${lifeAfterChore}</u> years that are truely yours. Make them count..</p>`;
 
 
 const sections = [...document.querySelectorAll('.page-section')];
