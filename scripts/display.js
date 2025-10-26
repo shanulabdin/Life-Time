@@ -98,7 +98,7 @@ function renderPhoneDots(){
 renderPhoneDots();
 
 const phoneText = document.querySelector('.phoneText');
-phoneText.innerHTML = `<p>Roughly <u>${phoneYears}</u> years will be spent on scrolling..</p>`;
+phoneText.innerHTML = `Roughly <u>${phoneYears}</u> years of your life will be spent scrolling.</p>`;
 
 
 // chore section
