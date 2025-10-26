@@ -130,6 +130,7 @@ function renderFreeSection(){
   for(let i = 0; i < lifeAfterChore; i++){
     const d = document.createElement('span');
     d.classList.add('dot');
+    d.classList.add('free');
 
     container.appendChild(d);
   }
@@ -137,4 +138,11 @@ function renderFreeSection(){
 renderFreeSection();
 
 const freeText = document.querySelector('.freeText');
-freeText.innerHTML = `<p><u>${lifeAfterChore}</u> out of ${remainingLife} years, is the time you actually have for yourself, in these ${lifeAfterChore} years you have to fulfill all your dreams, travel the world, make memories, leave your mark on the world, and live fully.</p>`;
+freeText.innerHTML = `<p><u>${lifeAfterChore}</u> years, is the time you actually have for yourself, in these ${lifeAfterChore} years you have to fulfill all your dreams, travel the world, make memories, leave your mark on the world, and do everything you ever wanted to do in this life, ${lifeAfterChore} years is not much, make every moment count.</p>`;
+
+
+const sections = [...document.querySelectorAll('.page-section')];
+document.getElementById('next-btn').addEventListener('click', () => {
+  const next = sections.find(s => s.getBoundingClientRect().top > 1) || sections[0];
+  next.scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
