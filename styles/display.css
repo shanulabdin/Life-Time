@@ -17,9 +17,14 @@ body{
 .sleepLife, 
 .workLife, 
 .phoneLife, 
-.choreLife{
+.choreLife,
+.freeLife{
   height: 100vh;
   height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .heading{
   position: absolute;
@@ -27,27 +32,26 @@ body{
   font-size: 30px;
   font-family: "Poppins", sans-serif;
 }
-.livedDots {
-  --dot: 20px;   /* size */
-  --gap: 6px;    /* gap */
-  display: grid;
-  grid-template-columns: repeat(10, var(--dot));
-  gap: var(--gap);
-  /* position: absolute;
-  top: 200px; */
-}
+.livedDots,
 .sleepDots, 
 .workDots, 
 .phoneDots, 
 .choreDots, 
 .freeDots{
-  --dot: 20px;   /* size */
-  --gap: 6px;    /* gap */
-  display: grid;
-  grid-template-columns: repeat(10, var(--dot));
+  --dot: 20px;
+  --gap: 6px;
+  --cols: 10;
+  display: flex;
+  flex-wrap: wrap;
   gap: var(--gap);
-  /* position: absolute;
-  top: 200px; */
+  width: calc(var(--cols) * var(--dot) + (var(--cols) - 1) * var(--gap)); /* fixes row width */
+  justify-content: center;
+}
+.freeDots > *{
+  width: var(--dot);
+  height: var(--dot);
+  border-radius: 50%;
+  flex: 0 0 var(--dot); /* fixed “cell” width */
 }
 .dot {
   width: var(--dot);
@@ -55,6 +59,7 @@ body{
   border-radius: 10px;
   background: rgb(194, 194, 194);
   /* box-shadow: 0px 0px 10px 0px rgb(194, 194, 194); */
+
 }
 .dot.filled { 
   background: #000000; 
@@ -87,4 +92,12 @@ body{
   font-weight: 600;
   font-size: 25px;
   margin-top: 90px;
+}
+.livedText p,
+.sleepText p,
+.workText p,
+.phoneText p,
+.choreText p,
+.freeText p{
+  margin-top: 50px;
 }
