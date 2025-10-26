@@ -17,8 +17,8 @@ const sleepYears = Math.round((sleep / 24) * (lifeExpectancy - age));
 const workYears = Math.round((work / 24) * (lifeExpectancy - age));
 const phoneYears = Math.round((phone / 24) * (lifeExpectancy - age));
 const choreYears = Math.round((2 / 24) * (lifeExpectancy - age));
-console.log(choreYears);
 
+// lived section
 function renderDots(lived){
   const container = document.getElementById('livedDots');
 
@@ -37,6 +37,7 @@ renderDots(age, sleepYears);
 const livedText = document.querySelector('.livedText');
 livedText.innerHTML = `<p>You have already lived <u>${age}</u> years of your expected <u>${lifeExpectancy}</u> years of life.</p>`;
 
+// sleep section
 function renderSleepDots(sleepYears){
   const container = document.getElementById('sleepDots');
 
@@ -57,9 +58,21 @@ renderSleepDots(sleepYears);
 const sleepText = document.querySelector('.sleepText');
 sleepText.innerHTML = `<p>Sleeping will take <u>${sleepYears}</u> years of your remaining <u>${lifeExpectancy - age}</u> years.</p>`;
 
+// work section
+function renderWorkDots(workYears){
+  const container = document.getElementById('workDots');
 
-// function renderWorkDots(){
-//   const container = document.getElementById('workDots');
+  for(let i = 0; i < lifeExpectancy - age - sleepYears; i++){
+    const d = document.createElement('span');
+    d.classList.add('dot');
 
+    if(i < workYears){
+      d.classList.add('work');
+    }
+    container.appendChild(d);
+  }
+} 
+renderWorkDots(workYears);
 
-// } 
+const workText = document.querySelector('.workText');
+workText.innerHTML = `<p>Work will take <u>${workYears}</u> years of your remaining <u>${lifeExpectancy - age - sleepYears}</u> years.</p>`;
