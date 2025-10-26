@@ -5,14 +5,21 @@
   padding: 0;
 }
 body{
-  height: 100vh;
-  height: 100dvh;
+
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 
   /* background-color: rgb(223, 223, 223); */
+}
+.livedLife, 
+.sleepLife, 
+.workLife, 
+.phoneLife, 
+.choreLife{
+  height: 100vh;
+  height: 100dvh;
 }
 .heading{
   position: absolute;
@@ -24,7 +31,16 @@ body{
   --dot: 20px;   /* size */
   --gap: 6px;    /* gap */
   display: grid;
-  grid-template-columns: repeat(8, var(--dot));
+  grid-template-columns: repeat(10, var(--dot));
+  gap: var(--gap);
+  /* position: absolute;
+  top: 200px; */
+}
+.sleepDots {
+  --dot: 20px;   /* size */
+  --gap: 6px;    /* gap */
+  display: grid;
+  grid-template-columns: repeat(10, var(--dot));
   gap: var(--gap);
   /* position: absolute;
   top: 200px; */

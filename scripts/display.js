@@ -33,18 +33,18 @@ function renderDots(lived, sleepYears){
     
     if(i < lived){
       d.classList.add('filled');
-    } else if(sleepAssigned < sleepYears){
-      d.classList.add('sleep');
-      sleepAssigned++;
-    } else if(workAssigned < workYears){
-      d.classList.add('work');
-      workAssigned++;
-    } else if(choreAssigned < choreYears){
-      d.classList.add('chore');
-      choreAssigned++;
-    } else if(phoneAssigned < phoneYears){
-      d.classList.add('phone');
-      phoneAssigned++;
+    // } else if(sleepAssigned < sleepYears){
+    //   d.classList.add('sleep');
+    //   sleepAssigned++;
+    // } else if(workAssigned < workYears){
+    //   d.classList.add('work');
+    //   workAssigned++;
+    // } else if(choreAssigned < choreYears){
+    //   d.classList.add('chore');
+    //   choreAssigned++;
+    // } else if(phoneAssigned < phoneYears){
+    //   d.classList.add('phone');
+    //   phoneAssigned++;
     }
     container.appendChild(d);
   }
@@ -53,3 +53,22 @@ renderDots(age, sleepYears);
 
 const displayText = document.querySelector('.displayText');
 displayText.innerHTML = `<p>You have already lived <u>${age}</u> years of your expected <u>${lifeExpectancy}</u> years of life.</p>`;
+
+function renderSleepDots(sleepYears){
+  const container = document.getElementById('sleepDots');
+
+  let sleepAssigned = 0;
+
+  for(let i = 0; i < lifeExpectancy - age; i++){
+    const s = document.createElement('span');
+    s.classList.add('dot');
+    if(sleepAssigned < sleepYears){
+      s.classList.add('sleep');
+      sleepAssigned++;
+    }
+    container.appendChild(s);
+  }
+} 
+renderSleepDots(sleepYears);
+
+
