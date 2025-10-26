@@ -77,7 +77,7 @@ body{
   background: rgb(103, 32, 151);
 }
 .dot.free {
-  background: rgb(255, 0, 0);
+  background: rgb(0, 0, 0);
 }
 .livedText,
 .sleepText,
@@ -110,6 +110,10 @@ body{
   color: white;
   background: #000000;
   cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .scrollBtn:active{
   background: #686868;

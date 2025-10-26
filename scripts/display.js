@@ -35,7 +35,7 @@ function renderDots(){
 renderDots();
 
 const livedText = document.querySelector('.livedText');
-livedText.innerHTML = `<p>You have already lived <u>${age}</u> years of your expected <u>${lifeExpectancy}</u> years of life.</p>`;
+livedText.innerHTML = `<p>You've already lived <u>${age}</u> years of your <u>${lifeExpectancy}</u> expected years.</p>`;
 
 // sleep section
 const remainingLife = lifeExpectancy - age;
@@ -57,7 +57,7 @@ function renderSleepDots(){
 renderSleepDots();
 
 const sleepText = document.querySelector('.sleepText');
-sleepText.innerHTML = `<p>Sleeping will take <u>${sleepYears}</u> years of your remaining <u>${remainingLife}</u> years.</p>`;
+sleepText.innerHTML = `<p>From the <u>${remainingLife}</u> that remain, about <u>${sleepYears}</u> years will go to sleep.</p>`;
 
 // work section
 const lifeAfterSleep = lifeExpectancy - age - sleepYears;
@@ -77,7 +77,7 @@ function renderWorkDots(){
 renderWorkDots();
 
 const workText = document.querySelector('.workText');
-workText.innerHTML = `<p>Work will take <u>${workYears}</u> years of your remaining <u>${lifeAfterSleep}</u> years.</p>`;
+workText.innerHTML = `<p>About <u>${workYears}</u> years will be spent working..</p>`;
 
 
 // phone section
@@ -98,7 +98,7 @@ function renderPhoneDots(){
 renderPhoneDots();
 
 const phoneText = document.querySelector('.phoneText');
-phoneText.innerHTML = `<p>Phone Time will take <u>${phoneYears}</u> years of your remaining <u>${lifeAfterWork}</u> years.</p>`;
+phoneText.innerHTML = `<p>Roughly <u>${phoneYears}</u> years will be spent on screens..</p>`;
 
 
 // chore section
@@ -119,7 +119,7 @@ function renderChoreSection(){
 renderChoreSection();
 
 const choreText = document.querySelector('.choreText');
-choreText.innerHTML = `<p>Eating, drinking and other daily chores will take <u>${choreYears}</u> years of your remaining <u>${lifeAfterPhone}</u> years.</p>`;
+choreText.innerHTML = `<p>Another <u>${choreYears}</u> will be spent on eating, drinking, and daily chores..</p>`;
 
 
 // free section
@@ -138,7 +138,7 @@ function renderFreeSection(){
 renderFreeSection();
 
 const freeText = document.querySelector('.freeText');
-freeText.innerHTML = `<p><u>${lifeAfterChore}</u> years, is the time you actually have for yourself, in these ${lifeAfterChore} years you have to fulfill all your dreams, travel the world, make memories, leave your mark on the world, and do everything you ever wanted to do in this life, ${lifeAfterChore} years is not much, make every moment count.</p>`;
+freeText.innerHTML = `<p>That leaves roughly <u>${lifeAfterChore}</u> years that are entirely yours. Spend them on what you truly care about! your dreams, the people you love, and the memories you want to keep. ${lifeAfterChore} years is precious. Make it count..</p>`;
 
 
 const sections = [...document.querySelectorAll('.page-section')];
